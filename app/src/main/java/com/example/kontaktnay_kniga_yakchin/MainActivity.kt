@@ -16,6 +16,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
 
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://example.com"))
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Нет подходящего приложения", Toast.LENGTH_SHORT).show()
+            }
+
             fun callPhoneNumber(phoneNumber: String) {
                 val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
                 if (intent.resolveActivity(packageManager) != null) {
