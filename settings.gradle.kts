@@ -1,23 +1,28 @@
-pluginManagement {
-    repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
+resolutionStrategy {
+    eachPlugin {
+        if (requested.id.id == "com.google.devtools.ksp") {
+            useModule("com.google.devtools.ksp:symbol-processing-gradle-plugin:${requested.version}")
         }
-        mavenCentral()
-        gradlePluginPortal()
     }
 }
+repositories {
+    maven("https://maven.aliyun.com/repository/gradle-plugin")
+    gradlePluginPortal()
+    google()
+    maven("https://maven.aliyun.com/repository/central")
+    mavenCentral()
+   }
+}
+
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
+repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+repositories {
+google()
+maven("https://maven.aliyun.com/repository/central")
+mavenCentral()
+   }
 }
+
 
 rootProject.name = "Kontaktnay_kniga_Yakchin"
 include(":app")
