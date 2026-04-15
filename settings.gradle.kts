@@ -1,3 +1,4 @@
+pluginManagement {
 resolutionStrategy {
     eachPlugin {
         if (requested.id.id == "com.google.devtools.ksp") {
