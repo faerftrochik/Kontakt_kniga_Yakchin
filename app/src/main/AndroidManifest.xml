@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kontaktnay_kniga_Yakchin">
         <activity
-            android:name="com.example.Kontaktnay_kniga_Yakchin.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
 
             <intent-filter>

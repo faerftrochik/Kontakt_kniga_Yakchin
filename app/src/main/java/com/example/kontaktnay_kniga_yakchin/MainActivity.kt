@@ -1,4 +1,4 @@
-package com.example.Kontaktnay_kniga_Yakchin
+package com.example.kontaktnay_kniga_yakchin
 
 import android.content.Intent
 import android.net.Uri
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kontaktnay_kniga_yakchin.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val btnEmail: Button = findViewById(R.id.buttonEMAIL)
         btnEmail.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:")
+                Intent.setData = Uri.parse("mailto:")
                 putExtra(Intent.EXTRA_EMAIL, arrayOf("contact@example.com"))
                 putExtra(Intent.EXTRA_SUBJECT, "Обращение")
             }
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         val btnShare: Button = findViewById(R.id.buttonKONTAKT)
         btnShare.setOnClickListener {
             val sendIntent = Intent(Intent.ACTION_SEND).apply {
-                type = "text/plain"
+                Intent.setType = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, "Контакт: +7 (495) 123-45-67, contact@example.com")
             }
             val chooser = Intent.createChooser(sendIntent, "Поделиться через...")
