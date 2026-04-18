@@ -1,4 +1,4 @@
-package com.example.myproject // Проверьте, чтобы ваш пакет назывался так же!
+package com.example.Kontaktnay_kniga_Yakchin
 
 import android.content.Intent
 import android.net.Uri
@@ -12,17 +12,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Эта строка связывает ваш XML с кодом
         setContentView(R.layout.activity_main)
 
-        // 1. Кнопка "Позвонить"
         val btnCall: Button = findViewById(R.id.buttonCALL)
         btnCall.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:+74951234567"))
             safeStart(intent)
         }
 
-        // 2. Кнопка "Написать email"
         val btnEmail: Button = findViewById(R.id.buttonEMAIL)
         btnEmail.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
@@ -33,7 +30,6 @@ class MainActivity : AppCompatActivity() {
             safeStart(intent)
         }
 
-        // 3. Кнопка "Карта"
         val btnMap: Button = findViewById(R.id.buttonMAP)
         btnMap.setOnClickListener {
             val geoUri = Uri.parse("geo:60.0237,30.2289?q=60.0237,30.2289(Наш офис)")
@@ -41,7 +37,6 @@ class MainActivity : AppCompatActivity() {
             safeStart(intent)
         }
 
-        // 4. Кнопка "Поделиться" (используем Chooser по заданию)
         val btnShare: Button = findViewById(R.id.buttonKONTAKT)
         btnShare.setOnClickListener {
             val sendIntent = Intent(Intent.ACTION_SEND).apply {
@@ -53,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Безопасный запуск (обязательно по методичке)
     private fun safeStart(intent: Intent) {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
