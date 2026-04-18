@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             callPhoneNumber("+74951234567")
 
             fun sendEmail(address: String, subject: String, body: String) {
-                val intent = Intent(Intent.ACTION_SENDO).apply {
+                val intent = Intent(Intent.ACTION_SENDTO).apply {
                     date = Uri.parse("mailto:")
 
                     putExtra(Intent.EXTRA_EMAIL, arrayOf(address))
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
             fun showOnMap(latitude: Double, longitude: Double, label: String) {
                 val geoUri = Uri.parse("geo:0,0?q=$latitude,$longitude($label)")
-                val intent = Intent(Intent.ACTIVE_VIEW, geoUri)
+                val intent = Intent(Intent.ACTION_VIEW, geoUri)
                 if (intent.resolveActivity(packageManager) != null) {
                     startActivity(intent)
                 }
