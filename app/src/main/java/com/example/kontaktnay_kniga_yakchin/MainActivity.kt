@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         btnCall.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:+74951234567"))
             safeStart(intent)
+//            if (intent.resolveActivity(packageManager) != null) {
+//                startActivity(intent)
+//            }
         }
 
         val btnEmail: Button = findViewById(R.id.buttonEMAIL)

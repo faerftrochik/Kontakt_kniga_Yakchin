@@ -12,21 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kontaktnay_kniga_Yakchin">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.Kontaktnay_kniga_Yakchin.MainActivity"
             android:exported="true">
-<!--            <queries>-->
-<!--                <intent>-->
-<!--                    <action android:name="android.intent.action.DIAL" />-->
-<!--                </intent>-->
 
-<!--                <intent>-->
-<!--                    <action android:name="android.intent.action.SEND" />-->
-<!--                    <data android:mimeType="text/plain" />-->
-<!--                </intent>-->
-<!--            </queries>-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+<!--                <queries>-->
+<!--                    <intent>-->
+<!--                        <action android:name="android.intent.action.DIAL" />-->
+<!--                    </intent>-->
 
+<!--                    <intent>-->
+<!--                        <action android:name="android.intent.action.SEND" />-->
+<!--                        <data android:mimeType="text/plain" />-->
+<!--                    </intent>-->
+<!--                </queries>-->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
