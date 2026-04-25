@@ -17,15 +17,14 @@ class MainActivity : AppCompatActivity() {
         btnCall.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:+74951234567"))
             safeStart(intent)
-//            if (intent.resolveActivity(packageManager) != null) {
-//                startActivity(intent)
-//            }
         }
+
+//        intent.setDataAndType(Uri.parse("mailto:"), "text/plain")
 
         val btnEmail: Button = findViewById(R.id.buttonEMAIL)
         btnEmail.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
-                Intent.setData = Uri.parse("mailto:")
+                  data = Uri.parse("mailto:")
                 putExtra(Intent.EXTRA_EMAIL, arrayOf("contact@example.com"))
                 putExtra(Intent.EXTRA_SUBJECT, "Обращение")
             }
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         val btnShare: Button = findViewById(R.id.buttonKONTAKT)
         btnShare.setOnClickListener {
             val sendIntent = Intent(Intent.ACTION_SEND).apply {
-                Intent.setType = "text/plain"
+                type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, "Контакт: +7 (495) 123-45-67, contact@example.com")
             }
             val chooser = Intent.createChooser(sendIntent, "Поделиться через...")
